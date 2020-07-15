@@ -14,3 +14,12 @@ export const initialState = {
     { id: 4, name: "Rear spoiler", price: 250 },
   ],
 };
+
+export const carReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "ADD_FEATURE":
+      return { ...state };
+    default:
+      return state;
+  }
+};
