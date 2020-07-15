@@ -20,11 +20,12 @@ export const initialState = {
 export const carReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FEATURE:
-      console.log("ADD_FEATURE Reached");
+      console.log("ADD_FEATURE Reached", action.payload);
       return {
         ...state,
         car: {
           ...state.car,
+          price: state.car.price + action.payload.price,
           features: [...state.car.features, action.payload],
         },
       };
