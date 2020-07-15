@@ -38,6 +38,7 @@ export const carReducer = (state = initialState, action) => {
           features: state.car.features.filter(
             (feature) => feature.id !== action.payload.id
           ),
+          price: state.car.price - action.payload.price,
         },
       };
     default:
